@@ -1,6 +1,23 @@
 $mobile: 375px;
 $desktop: 1440px;
 
+// Colors
 $almost-white: hsl(0, 0%, 98%);
 $medium-gray: hsl(0, 0%, 41%);
 $almost-blk: hsl(0,0%,8%);
+
+
+//map over each image and give it a width and height
+$dimensions:(
+   biz:( width: 81.25px, height: 14.36px),
+   audio: (width: 52.87px, height: 26px),
+   meet: (width: 64.14px, height: 14.36px),
+   maker: (width: 59.9px, height: 17.23px),
+);
+
+@each $name,$value in $dimensions {
+   .#{$name}{
+      width: map-get($value, width );
+      height: map-get($value, height );
+   }
+}

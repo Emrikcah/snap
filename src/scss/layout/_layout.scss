@@ -1,0 +1,12 @@
+@use '../abstracts/variables' as *;
+
+body{
+   min-height: 100vh;
+   max-width: $mobile;
+   margin: 0 auto;
+
+   @media(min-width: 1000px){
+
+      max-width: $desktop;
+   }
+}

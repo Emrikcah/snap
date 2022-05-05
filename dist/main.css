@@ -74,7 +74,105 @@ img {
   image-rendering: -webkit-optimize-contrast;
 }
 
+.biz {
+  width: 81.25px;
+  height: 14.36px;
+}
+
+.audio {
+  width: 52.87px;
+  height: 26px;
+}
+
+.meet {
+  width: 64.14px;
+  height: 14.36px;
+}
+
+.maker {
+  width: 59.9px;
+  height: 17.23px;
+}
+
+html {
+  font-size: 62.5%;
+}
+
 body {
   font-family: "Epilogue", sans-serif;
   font-size: 18px;
+}
+
+h1 {
+  font-size: clamp(3.6rem, 5vw + 1rem, 8rem);
+  letter-spacing: clamp(-0.5px, 4vw, -1.11px);
+}
+
+p {
+  font-size: clamp(1.6rem, 4vw, 1.8rem);
+  line-height: clamp(26px, 5vw, 28px);
+  color: hsl(0deg, 0%, 41%);
+}
+
+header {
+  padding: 16px 16px 24px 16px;
+}
+header .nav-header {
+  display: flex;
+  justify-content: space-between;
+}
+header .nav-header .nav-logo {
+  width: 87px;
+}
+header .nav-header .nav-menu {
+  height: 18px;
+}
+header .nav-links, header .registration {
+  display: none;
+}
+
+main {
+  padding-bottom: 64px;
+}
+main picture {
+  margin-bottom: 48px;
+}
+main section {
+  text-align: center;
+  padding: 10px;
+}
+main section h1 {
+  margin-bottom: 16px;
+}
+main section p {
+  margin-bottom: 24px;
+}
+main section button {
+  background-color: hsl(0deg, 0%, 8%);
+  border: 1px solid transparent;
+  border-radius: 15px;
+  font-weight: 700;
+  color: hsl(0deg, 0%, 98%);
+  padding: 12px 20px 10px 24px;
+  margin-bottom: 48px;
+}
+main section button:hover {
+  background-color: hsl(0deg, 0%, 98%);
+  color: hsl(0deg, 0%, 8%);
+  border: 1px solid hsl(0deg, 0%, 8%);
+}
+main section footer {
+  display: flex;
+  justify-content: space-around;
+}
+
+body {
+  min-height: 100vh;
+  max-width: 375px;
+  margin: 0 auto;
+}
+@media (min-width: 1000px) {
+  body {
+    max-width: 1440px;
+  }
 }

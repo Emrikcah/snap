@@ -1,0 +1,49 @@
+@use '../abstracts/variables' as *;
+
+main{
+   padding-bottom: 64px;
+   
+      picture{
+         margin-bottom: 48px;
+      }
+
+      section{
+         text-align: center;
+         padding: 10px;
+
+         h1{
+            margin-bottom: 16px;
+         }
+
+         p{
+           margin-bottom: 24px;
+         }
+
+         button{
+            background-color: $almost-blk;
+            //the button will jump on hover without transparent
+            border: 1px solid transparent;
+            border-radius: 15px;
+            font-weight: 700;
+
+            color: $almost-white;
+            padding: 12px 20px 10px 24px;
+            margin-bottom: 48px;
+
+            &:hover{
+               background-color: $almost-white;
+               color: $almost-blk;
+               border: 1px solid $almost-blk;
+            }
+         }
+
+         footer{
+            display: flex;
+            justify-content: space-around;
+         }
+
+         
+      }
+   
+}
+

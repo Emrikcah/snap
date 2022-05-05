@@ -1,0 +1,20 @@
+header{
+   padding: 16px 16px 24px 16px;
+
+   .nav-header{
+      display: flex;
+      justify-content: space-between;
+
+      .nav-logo{
+         width: 87px;
+      }
+
+      .nav-menu{
+         height: 18px;
+      }
+   }
+
+   .nav-links,.registration{
+      display: none;
+   }
+}
