@@ -132,7 +132,7 @@ header .nav-links, header .registration {
 }
 
 main {
-  padding-bottom: 64px;
+  min-height: calc(100vh - 67.95px);
 }
 main picture {
   margin-bottom: 48px;
@@ -142,6 +142,7 @@ main section {
   padding: 10px;
 }
 main section h1 {
+  display: inline-block;
   margin-bottom: 16px;
 }
 main section p {
@@ -164,6 +165,29 @@ main section button:hover {
 main section footer {
   display: flex;
   justify-content: space-around;
+  align-items: center;
+}
+@media (min-width: 1000px) {
+  main picture img {
+    width: 480px;
+  }
+  main section {
+    max-width: 540px;
+    text-align: left;
+    padding: 10px 10px 0 10px;
+  }
+  main section h1:first-child {
+    margin-bottom: -30px;
+  }
+  main section p {
+    margin-bottom: 60px;
+  }
+  main section button {
+    margin-bottom: 108px;
+  }
+  main section footer {
+    justify-content: space-between;
+  }
 }
 
 body {
@@ -174,5 +198,14 @@ body {
 @media (min-width: 1000px) {
   body {
     max-width: 1440px;
+  }
+  body main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+  }
+  body section {
+    order: -1;
   }
 }

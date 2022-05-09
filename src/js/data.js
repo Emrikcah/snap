@@ -20,3 +20,22 @@ const features = [
       text: 'Planning'
    },
 ]
+
+const company = [
+   {
+      id: 1,
+      
+      text: 'History'
+   },
+   {
+      id: 2,
+      
+      text: 'Our Team'
+   },
+   {
+      id: 3,
+      
+      text: 'Blog'
+   },
+  
+]

@@ -1,49 +1,78 @@
-@use '../abstracts/variables' as *;
+@use "../abstracts/variables" as *;
 
-main{
-   padding-bottom: 64px;
-   
-      picture{
-         margin-bottom: 48px;
+main {
+   // padding-bottom: 64px;
+   min-height: calc(100vh - 67.95px);
+
+   picture {
+      margin-bottom: 48px;
+   }
+
+   section {
+      text-align: center;
+      padding: 10px;
+
+      h1 {
+         display: inline-block;
+         margin-bottom: 16px;
       }
 
-      section{
-         text-align: center;
-         padding: 10px;
+      p {
+         margin-bottom: 24px;
+      }
 
-         h1{
-            margin-bottom: 16px;
+      button {
+         background-color: $almost-blk;
+         //the button will jump on hover without transparent
+         border: 1px solid transparent;
+         border-radius: 15px;
+         font-weight: 700;
+
+         color: $almost-white;
+         padding: 12px 20px 10px 24px;
+         margin-bottom: 48px;
+
+         &:hover {
+            background-color: $almost-white;
+            color: $almost-blk;
+            border: 1px solid $almost-blk;
+         }
+      }
+
+      footer {
+         display: flex;
+         justify-content: space-around;
+         align-items: center;
+      }
+   }
+
+   @media (min-width: 1000px) {
+      picture {
+         img {
+            width: 480px;
+         }
+      }
+
+      section {
+         max-width: 540px;
+         text-align: left;
+         padding: 10px 10px 0 10px;
+
+         h1:first-child {
+            margin-bottom: -30px;
          }
 
          p{
-           margin-bottom: 24px;
+            margin-bottom: 60px;
          }
 
          button{
-            background-color: $almost-blk;
-            //the button will jump on hover without transparent
-            border: 1px solid transparent;
-            border-radius: 15px;
-            font-weight: 700;
-
-            color: $almost-white;
-            padding: 12px 20px 10px 24px;
-            margin-bottom: 48px;
-
-            &:hover{
-               background-color: $almost-white;
-               color: $almost-blk;
-               border: 1px solid $almost-blk;
-            }
+            margin-bottom: 108px;
          }
 
-         footer{
-            display: flex;
-            justify-content: space-around;
+         footer {
+            justify-content: space-between;
          }
-
-         
       }
-   
+   }
 }
-
