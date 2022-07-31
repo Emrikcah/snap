@@ -23,5 +23,16 @@ p{
    color: $medium-gray;
 }
 
+li a,.link-btn{
+   color: $medium-gray;
+   text-transform: capitalize;
+
+   &:hover{
+      color: $almost-blk;
+   }
+}
+
+
+
 
 
