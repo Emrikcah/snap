@@ -1,20 +1,158 @@
-header{
-   padding: 16px 16px 24px 16px;
+@use "../abstracts/variables" as *;
+@use "../components/buttons" as *;
 
-   .nav-header{
+.max-width {
+   max-width: 375px;
+   margin-inline: auto;
+
+   .content-container {
+      margin-inline: auto;
+   }
+
+   .nav {
       display: flex;
       justify-content: space-between;
+      padding-top: 16px;
+      padding-bottom: 24px;
+   }
 
-      .nav-logo{
-         width: 87px;
-      }
+   .nav-links {
+      display: none;
 
-      .nav-menu{
-         height: 18px;
+      img {
+         display: inline-block;
       }
    }
 
-   .nav-links,.registration{
+   /// Media Queries///
+   @media (min-width: 1000px) {
+      max-width: 1440px;
+
+      .content-container {
+         max-width: 1350px;
+      }
+
+      .nav {
+         align-items: center;
+      }
+
+      .nav-logo {
+         margin-right: 60px;
+      }
+
+      .nav-links {
+         display: flex;
+         justify-content: space-around;
+         align-items: center;
+         width: 100%;
+         padding-left: 0;
+         gap: 30px;
+      }
+
+      .push-right {
+         margin-right: auto;
+      }
+
+      .btn-open,
+      .btn-close {
+         display: none;
+      }
+   }
+} //max-width end
+
+header {
+   margin-bottom: 10px;
+}
+
+.link-btn {
+   background: transparent;
+   border-color: transparent;
+}
+
+.hello img {
+   margin-right: 14px;
+}
+
+.btn-close {
+   margin-left: auto;
+   margin-right: 20px;
+}
+
+// use media query for the box shadow at large screen sizes
+#dropdown-features,
+#dropdown-company {
+   gap: 7px;
+   a {
+      font-size: 14px;
+   }
+}
+@media (min-width: 1000px) {
+   #dropdown-features,
+   #dropdown-company {
+      display: none;
+      padding: 24px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.149126);
+   }
+
+   .relative {
+      position: relative;
+   }
+
+   #dropdown-features,
+   #dropdown-company {
+      position: absolute;
+   }
+
+   #dropdown-features {
+      width: 153px;
+      right: 0px;
+      top: 45px;
+   }
+   #dropdown-company {
+      width: 116px;
+      left: 10px;
+      top: 45px;
+   }
+}
+
+#dropdown-features.show,
+#dropdown-company.show {
+   display: flex;
+   flex-direction: column;
+}
+
+// sidebar styles
+.sidebar-container {
+   img {
+      display: inline-block;
+   }
+}
+
+.sidebar {
+   position: fixed;
+   top: 0;
+   right: 0;
+   width: 50%;
+   height: 100%;
+   background-color: $almost-white;
+   display: flex;
+   flex-direction: column;
+   row-gap: 1rem;
+   padding-top: 16px;
+   transform: translate(100%);
+
+   @media (min-width: 500px) {
       display: none;
    }
 }
+
+.show-sidebar {
+   transform: translate(0);
+}
+
+.sidebar-links {
+}
+
+//todo make relative class relative make dropdown company,features absolute
