@@ -1,1 +1,39 @@
 @use '../abstracts/variables' as *;
+
+%btn {
+   //the button will jump on hover without transparent
+   border-radius: 15px;
+   font-weight: 700;
+   cursor: pointer;
+   color: $almost-white;
+   padding: 12px 20px 10px 24px;
+   
+   &:hover {
+      color: $almost-blk;
+   }
+}
+
+.btn-hero{
+   @extend %btn;
+   border: 1px solid transparent;
+   margin-bottom: 48px;
+   background-color: $almost-blk;
+   
+   &:hover{
+      background-color: $almost-white;
+      border: 1px solid $almost-blk;
+      
+   }
+}
+
+.btn-nav{
+   @extend %btn;
+   border: 1px solid $medium-gray;
+
+   &:hover{
+      border: 2px solid $almost-blk;
+      margin: -1px;
+
+   }
+
+}
