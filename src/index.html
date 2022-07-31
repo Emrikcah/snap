@@ -9,60 +9,94 @@
       <link rel="stylesheet" href="/dist/main.css" />
 
       <title>snap</title>
-
-      
    </head>
    <body>
       <header>
-         <nav id="nav" class="nav">
-           <!-- nav-center -->
-            <div class="nav-center">
-              <!-- nav-header -->
-              <div class="nav-header">
-                 <img src="./images/logo.svg" class="nav-logo" alt="logo" />
-                 <img src="./images/icon-menu.svg" id="nav-menu" class="nav-menu" alt="menu">
-              </div>
-              <!-- nav-header end -->
-              <!-- nav-links -->
-              <ul class="nav-links">
-                <li>
-                  <a href="#">features</a>
-                </li>
-                <li>
-                  <a href="#">company</a>
-                </li>
-                <li>
-                  <a href="#">careers</a>
-                </li>
-                <li>
-                  <a href="#">about</a>
-                </li>
-              </ul>
-              <!-- nav-links end -->
+         <div class="max-width">
+            <div class="content-container">
+               <!-- desktop nav -->
+               <nav class="nav">
+                  <!-- logo and menu btn -->
+                  <a href="/" aria-label="Go to homepage">
+                     <img src="./images/logo.svg" class="nav-logo" alt="logo" />
+                  </a>
+                  <button class="btn-open" aria-label="Open mobile nav">
+                     <img src="./images/icon-menu.svg" id="nav-menu" class="nav-menu" alt="menu" />
+                  </button>
+                  <!-- logo and menu btn end -->
+
+                  <!-- nav-links -->
+                  <ul class="nav-links">
+                     <li class="relative">
+                        <button class="link-btn">features</button>
+                        <img src="./images/icon-arrow-down.svg" alt="down arrow" />
+                        <div id="dropdown-features" class="dropdown-menu">
+                           <!-- insert with js -->
+                        </div>
+                     </li>
+                     <li class="relative">
+                        <button class="link-btn">company</button>
+                        <img src="./images/icon-arrow-down.svg" alt="down arrow" />
+                        <div id="dropdown-company" class="dropdown-menu">
+                           <!-- insert with js -->
+                        </div>
+                     </li>
+                     <li><a href="#">careers</a></li>
+                     <li class="push-right"><a href="#">about</a></li>
+                     <!-- registration -->
+                     <li><a href="#">login</a></li>
+                     <li class="btn-nav"><a href="#">register</a></li>
+                     <!-- registration end -->
+                  </ul>
+                  <!-- nav-links end -->
+               </nav>
+               <!-- desktop nav end -->
             </div>
-            <!-- registration -->
-            <div class="registration">
-               <button>login</button>
-               <button>register</button>
-            </div>
-            <!-- registration end -->
-            <!-- nav-center end -->
-           
-         </nav>
-         <!-- side nav -->
-         <!-- side nav end -->
+         </div>
+         <!-- mobile sidebar nav -->
+         <div class="sidebar-container">
+            <aside class="sidebar">
+               <button class="btn-close">
+                  <img src="./images/icon-close-menu.svg" id="nav-menu" class="nav-menu" alt="menu" />
+               </button>
+               <ul class="sidebar-links">
+                  <li >
+                     <button class="link-btn">features</button>
+                     <img src="./images/icon-arrow-down.svg" alt="down arrow" />
+                     <div id="dropdown-features" class="dropdown-menu">
+                        <!-- insert with js -->
+                     </div>
+                  </li>
+                  <li >
+                     <button class="link-btn">company</button>
+                     <img src="./images/icon-arrow-down.svg" alt="down arrow" />
+                     <div id="dropdown-company" class="dropdown-menu">
+                        <!-- insert with js -->
+                     </div>
+                  </li>
+                  <li><a href="#">careers</a></li>
+                  <li class="push-right"><a href="#">about</a></li>
+                  <!-- registration -->
+                  <li><a href="#">login</a></li>
+                  <li><a href="#">register</a></li>
+                  <!-- registration end -->
+               </ul>
+            </aside>
+         </div>
+         <aside class="submenu"></aside>
+         <!-- mobile sidebar nav end -->
       </header>
 
       <main>
          <picture>
-            <source media="(min-width:600px)" srcset="./images/image-hero-desktop.png">
-            <img src="./images/image-hero-mobile.png" alt="man standing up typing on a laptop">
+            <source media="(min-width:600px)" srcset="./images/image-hero-desktop.png" />
+            <img src="./images/image-hero-mobile.png" alt="man standing up typing on a laptop" />
          </picture>
          <section>
-            <h1>Make </h1>
+            <h1>Make</h1>
             <h1>remote work</h1>
             <p>Get your team in sync, no matter your location. Streamline processes, create team rituals, and watch productivity soar.</p>
-            <button>Learn more</button>
+            <button class="btn-hero">Learn more</button>
             <footer>
                <img src="./images/client-databiz.svg" class="biz" alt="data biz" />
                <img src="./images/client-audiophile.svg" class="audio" alt="audiophile" />
@@ -72,6 +106,6 @@
          </section>
       </main>
 
-    
+      <script type="module" src="./js/main.js"></script>
    </body>
 </html>

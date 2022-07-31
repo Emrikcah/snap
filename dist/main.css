@@ -60,7 +60,6 @@ select {
   html:focus-within {
     scroll-behavior: auto;
   }
-
   *,
 *::before,
 *::after {
@@ -114,26 +113,179 @@ p {
   color: hsl(0deg, 0%, 41%);
 }
 
-header {
-  padding: 16px 16px 24px 16px;
+li a, .link-btn {
+  color: hsl(0deg, 0%, 41%);
+  text-transform: capitalize;
 }
-header .nav-header {
-  display: flex;
-  justify-content: space-between;
-}
-header .nav-header .nav-logo {
-  width: 87px;
-}
-header .nav-header .nav-menu {
-  height: 18px;
-}
-header .nav-links, header .registration {
-  display: none;
+li a:hover, .link-btn:hover {
+  color: hsl(0deg, 0%, 8%);
 }
 
-main {
-  min-height: calc(100vh - 67.95px);
+.btn-nav, .btn-hero {
+  border-radius: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  color: hsl(0deg, 0%, 98%);
+  padding: 12px 20px 10px 24px;
 }
+.btn-nav:hover, .btn-hero:hover {
+  color: hsl(0deg, 0%, 8%);
+}
+
+.btn-hero {
+  border: 1px solid transparent;
+  margin-bottom: 48px;
+  background-color: hsl(0deg, 0%, 8%);
+}
+.btn-hero:hover {
+  background-color: hsl(0deg, 0%, 98%);
+  border: 1px solid hsl(0deg, 0%, 8%);
+}
+
+.btn-nav {
+  border: 1px solid hsl(0deg, 0%, 41%);
+}
+.btn-nav:hover {
+  border: 2px solid hsl(0deg, 0%, 8%);
+  margin: -1px;
+}
+
+.max-width {
+  max-width: 375px;
+  margin-inline: auto;
+}
+.max-width .content-container {
+  margin-inline: auto;
+}
+.max-width .nav {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 16px;
+  padding-bottom: 24px;
+}
+.max-width .nav-links {
+  display: none;
+}
+.max-width .nav-links img {
+  display: inline-block;
+}
+@media (min-width: 1000px) {
+  .max-width {
+    max-width: 1440px;
+  }
+  .max-width .content-container {
+    max-width: 1350px;
+  }
+  .max-width .nav {
+    align-items: center;
+  }
+  .max-width .nav-logo {
+    margin-right: 60px;
+  }
+  .max-width .nav-links {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    padding-left: 0;
+    gap: 30px;
+  }
+  .max-width .push-right {
+    margin-right: auto;
+  }
+  .max-width .btn-open,
+.max-width .btn-close {
+    display: none;
+  }
+}
+
+header {
+  margin-bottom: 10px;
+}
+
+.link-btn {
+  background: transparent;
+  border-color: transparent;
+}
+
+.hello img {
+  margin-right: 14px;
+}
+
+.btn-close {
+  margin-left: auto;
+  margin-right: 20px;
+}
+
+#dropdown-features,
+#dropdown-company {
+  gap: 7px;
+}
+#dropdown-features a,
+#dropdown-company a {
+  font-size: 14px;
+}
+
+@media (min-width: 1000px) {
+  #dropdown-features,
+#dropdown-company {
+    display: none;
+    padding: 24px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.149126);
+  }
+  .relative {
+    position: relative;
+  }
+  #dropdown-features,
+#dropdown-company {
+    position: absolute;
+  }
+  #dropdown-features {
+    width: 153px;
+    right: 0px;
+    top: 45px;
+  }
+  #dropdown-company {
+    width: 116px;
+    left: 10px;
+    top: 45px;
+  }
+}
+#dropdown-features.show,
+#dropdown-company.show {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-container img {
+  display: inline-block;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background-color: hsl(0deg, 0%, 98%);
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  padding-top: 16px;
+  transform: translate(100%);
+}
+@media (min-width: 500px) {
+  .sidebar {
+    display: none;
+  }
+}
+
+.show-sidebar {
+  transform: translate(0);
+}
+
 main picture {
   margin-bottom: 48px;
 }
@@ -148,26 +300,16 @@ main section h1 {
 main section p {
   margin-bottom: 24px;
 }
-main section button {
-  background-color: hsl(0deg, 0%, 8%);
-  border: 1px solid transparent;
-  border-radius: 15px;
-  font-weight: 700;
-  color: hsl(0deg, 0%, 98%);
-  padding: 12px 20px 10px 24px;
-  margin-bottom: 48px;
-}
-main section button:hover {
-  background-color: hsl(0deg, 0%, 98%);
-  color: hsl(0deg, 0%, 8%);
-  border: 1px solid hsl(0deg, 0%, 8%);
-}
 main section footer {
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 @media (min-width: 1000px) {
+  main {
+    max-width: 1145px;
+    margin-inline: auto;
+  }
   main picture img {
     width: 480px;
   }
@@ -192,10 +334,9 @@ main section footer {
 
 body {
   min-height: 100vh;
-  max-width: 375px;
   margin: 0 auto;
 }
-@media (min-width: 1000px) {
+@media (min-width: 1440px) {
   body {
     max-width: 1440px;
   }

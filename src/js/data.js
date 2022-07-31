@@ -1,41 +1,22 @@
-const features = [
+export const data = [
    {
-      id: 1,
-      images: '../images/icon-todo.svg',
-      text: 'TodoList'
+      page: 'features',
+      links:[
+         {text: 'Todo List', icon: './images/icon-todo.svg'},
+         {text: 'Calendar', icon: './images/icon-calendar.svg'},
+         {text: 'Reminders', icon: './images/icon-reminders.svg'},
+         {text: 'Planning', icon: './images/icon-planning.svg'},
+      ],
+     
    },
    {
-      id: 2,
-      images: '../images/icon-calendar.svg',
-      text: 'Calendar'
-   },
-   {
-      id: 3,
-      images: '../images/icon-reminders.svg',
-      text: 'Reminders'
-   },
-   {
-      id: 4,
-      images: '../images/icon-planning.svg',
-      text: 'Planning'
+      page: 'company',
+      links:[
+         {text: 'History'},
+         {text: 'Our Team'},
+         {text: 'Blog'},
+      ]
+     
    },
 ]
-
-const company = [
-   {
-      id: 1,
-      
-      text: 'History'
-   },
-   {
-      id: 2,
-      
-      text: 'Our Team'
-   },
-   {
-      id: 3,
-      
-      text: 'Blog'
-   },
-  
-]
+   
