@@ -16,6 +16,14 @@
       padding-bottom: 24px;
    }
 
+   .btn-open{
+      padding-right: 20px;
+   }
+
+   .nav-logo{
+      padding-left: 20px;
+   }
+
    .nav-links {
       display: none;
 
@@ -25,7 +33,7 @@
    }
 
    /// Media Queries///
-   @media (min-width: 1000px) {
+   @media (min-width: 1440px) {
       max-width: 1440px;
 
       .content-container {
@@ -36,8 +44,13 @@
          align-items: center;
       }
 
+      .btn-open{
+         padding-right: 0;
+      }
+      
       .nav-logo {
          margin-right: 60px;
+         padding-left: 0;
       }
 
       .nav-links {
@@ -64,6 +77,12 @@ header {
    margin-bottom: 10px;
 }
 
+.btn-open,
+.btn-close {
+   background: transparent;
+   border-color: transparent;
+}
+
 .link-btn {
    background: transparent;
    border-color: transparent;
@@ -82,14 +101,14 @@ header {
 #dropdown-features,
 #dropdown-company {
    gap: 7px;
-   a {
-      font-size: 14px;
-   }
+   display: none;
 }
-@media (min-width: 1000px) {
+
+
+
+@media (min-width: 1440px) {
    #dropdown-features,
    #dropdown-company {
-      display: none;
       padding: 24px;
       background-color: #fff;
       border-radius: 10px;
@@ -110,6 +129,7 @@ header {
       right: 0px;
       top: 45px;
    }
+
    #dropdown-company {
       width: 116px;
       left: 10px;
@@ -125,16 +145,18 @@ header {
 
 // sidebar styles
 .sidebar-container {
+   //for dropdown arrows
    img {
       display: inline-block;
    }
 }
 
 .sidebar {
+   z-index: 10;
    position: fixed;
    top: 0;
    right: 0;
-   width: 50%;
+   width: 240px;
    height: 100%;
    background-color: $almost-white;
    display: flex;
@@ -142,9 +164,38 @@ header {
    row-gap: 1rem;
    padding-top: 16px;
    transform: translate(100%);
+   transition: transform ease-in 0.25s;
+
+   .link-btn {
+      padding: 0;
+   }
+
+   .dropdown-menu a {
+      margin-bottom: 10px;
+   }
+
+   .push-right {
+      margin-bottom: 30px;
+   }
+
+   .move-middle {
+      text-align: center;
+      align-self: stretch;
+   }
+
+   #dropdown-features,
+   #dropdown-company {
+      padding-top: 18px;
+   }
 
    @media (min-width: 500px) {
       display: none;
+   }
+}
+
+.sidebar{
+   .dropdown-menu a{
+      padding-left: 27px;
    }
 }
 
@@ -153,6 +204,25 @@ header {
 }
 
 .sidebar-links {
+   display: flex;
+   flex-direction: column;
+   row-gap: 10px;
+   height: 50vh;
+   padding-left: 0;
+   min-width: 195px;
+   margin-inline: auto;
 }
 
-//todo make relative class relative make dropdown company,features absolute
+.show-overlay {
+   position: fixed;
+   top: 0;
+   bottom: 0;
+   right: 0;
+   left: 0;
+   background: hsl(0, 0%, 8%, 0.75);
+   // mix-blend-mode: overlay;
+   @media (min-width: 500px) {
+      display: none;
+   }
+   //add /remove this class based on show-sidebar
+}

@@ -10,6 +10,8 @@ html{
 body{
    font-family: 'Epilogue', sans-serif;
    font-size: 18px;
+   
+
 }
 
 h1{
@@ -31,6 +33,22 @@ li a,.link-btn{
       color: $almost-blk;
    }
 }
+
+#dropdown-features,
+#dropdown-company {
+   
+   a {
+      font-size: 16px;
+   }
+
+   @media(min-width: 1000px){
+      a {
+         font-size: 14px;
+      }
+   }
+
+}
+
 
 
 

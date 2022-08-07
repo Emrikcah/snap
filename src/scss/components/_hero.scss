@@ -20,24 +20,7 @@ main {
          margin-bottom: 24px;
       }
 
-      // .btn-hero {
-      //    background-color: $almost-blk;
-      //    //the button will jump on hover without transparent
-      //    border: 1px solid transparent;
-      //    border-radius: 15px;
-      //    font-weight: 700;
-
-      //    color: $almost-white;
-      //    padding: 12px 20px 10px 24px;
-      //    margin-bottom: 48px;
-
-      //    &:hover {
-      //       background-color: $almost-white;
-      //       color: $almost-blk;
-      //       border: 1px solid $almost-blk;
-      //    }
-      // }
-
+     
       footer {
          display: flex;
          justify-content: space-around;
@@ -45,7 +28,7 @@ main {
       }
    }
 
-   @media (min-width: 1000px) {
+   @media (min-width: 1440px) {
 
       max-width: 1145px;
       margin-inline: auto;

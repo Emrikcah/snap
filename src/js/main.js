@@ -5,28 +5,30 @@ const dropdownFeatures = [...document.querySelectorAll("#dropdown-features")];
 const dropdownCompany = [...document.querySelectorAll("#dropdown-company")];
 
 const openBtn = document.querySelector(".btn-open");
-const linkBtns = [...document.querySelectorAll(".link-btn")];
+const linkGrab = [...document.querySelectorAll(".link-grab")];
 const closeBtn = document.querySelector(".btn-close");
 const sidebar = document.querySelector(".sidebar");
-const sidebarLinks = document.querySelector(".sidebar-links");
-const submenu = document.querySelector(".submenu");
-const hero = document.querySelector(".hero");
-const nav = document.querySelector(".nav");
+const overlay = document.querySelector(".overlay");
+
+
 
 // show/hide mobile nav sidebar
 
 openBtn.addEventListener("click", function () {
    sidebar.classList.add("show-sidebar");
+   overlay.classList.add("show-overlay");
 });
 
 closeBtn.addEventListener("click", function () {
    sidebar.classList.remove("show-sidebar");
+   overlay.classList.remove("show-overlay");
 });
 
 /*******************populate the dropdown menus ******************/
 
 const [features, company] = [data[0], data[1]];
 
+//loop through and expose the data within features/company
 features.links.forEach(({ text, icon }) => {
    //loop through and create/append elements
    dropdownFeatures.forEach((element) => {
@@ -53,8 +55,7 @@ features.links.forEach(({ text, icon }) => {
    });
 });
 
-company.links.forEach(({text}) => {
-
+company.links.forEach(({ text }) => {
    dropdownCompany.forEach((element) => {
       const aEl = document.createElement("a");
       aEl.setAttribute("href", "#");
@@ -64,23 +65,14 @@ company.links.forEach(({text}) => {
    });
 });
 
-/****************mouse over event for dropdown buttons**************/
-linkBtns.forEach(btn =>{
- 
-   btn.addEventListener('mouseover',function (e) {
-     
-      if (btn.textContent == 'features') {
-        
-         //loop over dropdownfeatures and add the class to each instance
-         for (const item of dropdownFeatures) {
-            item.classList.add('show');
-         }
-      } else {
-         
-         //loop over dropdownCompany and add the class to each instance
-         for (const item of dropdownCompany) {
-            item.classList.add('show');
-         }
-      }
-   })
-})
+//grab the li and add an eventlistener to it
+linkGrab.forEach((link) => {
+   link.addEventListener("click", function (e) {
+
+      // toggle the dropdown menu(s)
+      const linkGradChild = link.children[2];
+     linkGradChild.classList.toggle('show')
+   });
+});
+
+

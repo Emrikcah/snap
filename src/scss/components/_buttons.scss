@@ -37,3 +37,9 @@
    }
 
 }
+
+.btn-sidebar{
+   @extend %btn;
+   border: 1px solid $medium-gray;
+
+}
