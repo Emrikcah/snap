@@ -10,8 +10,6 @@ const closeBtn = document.querySelector(".btn-close");
 const sidebar = document.querySelector(".sidebar");
 const overlay = document.querySelector(".overlay");
 
-
-
 // show/hide mobile nav sidebar
 
 openBtn.addEventListener("click", function () {
@@ -65,14 +63,27 @@ company.links.forEach(({ text }) => {
    });
 });
 
-//grab the li and add an eventlistener to it
+//this function will be called onclick and it will swap out the images
+function imgSwap(downArrow) {
+   if (downArrow.src.match("icon-arrow-down.svg")) {
+      downArrow.src = "./images/icon-arrow-up.svg";
+   } else {
+      downArrow.src = './images/icon-arrow-down.svg';
+   }
+}
+
+//grab the li loop through and add an eventlistener to each button
 linkGrab.forEach((link) => {
    link.addEventListener("click", function (e) {
-
+      //select the forth child of the li
       // toggle the dropdown menu(s)
       const linkGradChild = link.children[2];
-     linkGradChild.classList.toggle('show')
+      const downArrow = link.children[1];
+      linkGradChild.classList.toggle("show");
+
+      imgSwap(downArrow);
    });
 });
+
 
 
