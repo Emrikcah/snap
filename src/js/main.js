@@ -46,8 +46,10 @@ features.links.forEach(({ text, icon }) => {
       //add text to span element
       spanEl.textContent = text;
 
-      //create src
+      //create src attribute
       imgEl.setAttribute("src", `${icon}`);
+      //create alt attribute
+      imgEl.setAttribute('alt', `${text}`)
       //put img,span inside the a element
       aEl.append(imgEl, spanEl);
    });
